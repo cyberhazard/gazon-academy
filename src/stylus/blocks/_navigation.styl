@@ -1,0 +1,88 @@
+.Navigation
+  position absolute
+  top 0
+  left 0
+  right 0
+  background white url('../../images/grass.svg') bottom center repeat-x
+  &__wrapper
+    display flex
+    justify-content space-between
+    padding 0.6rem 0 3rem
+  &__content
+    width 100%
+  &__logo
+    margin-right 3rem
+  &__information
+    display flex
+    justify-content space-between
+    align-items center
+    border-bottom 0.1rem solid rgba(0,0,0,0.1)
+    padding-bottom 1rem
+    margin-bottom 3rem
+  &__left, &__right
+    display flex
+    justify-content space-between
+    align-items center
+  &__item
+    display flex
+    align-items center
+    font-weight 700
+    font-size 1.4rem
+    text-transform uppercase
+    margin-right 2.6rem
+    & a
+      color black
+      text-transform none
+    & svg
+      margin-right 1rem
+  &__bottom
+    display flex
+    justify-content space-between
+    align-items center
+  &__title
+    width: 26%
+    font-style italic
+    font-size 2.2rem
+    font-weight 700
+    text-transform uppercase
+  &__link
+    font-weight 500
+    font-size 1.6rem
+    text-transform: uppercase
+    position relative
+    margin-right 3rem
+    color black
+    transition color .3s
+    will-change: color
+    &::after
+      content: ''
+      position absolute
+      top 100%
+      left 0
+      right 0
+      height 2px
+      background-color #35CC62
+      opacity 0
+      will-change: opacity
+      transition opacity .3s
+    &:hover, &_active
+      color black
+      &::after
+        opacity 1
+    &:last-child
+      margin-right 0
+  &__button
+    background-color #06B0DC
+    border none;
+    border-radius: 4px
+    padding 1.1rem 1.6rem
+    font-size: 1.4rem
+    color white
+    font-weight: 500
+    text-transform: uppercase
+    letter-spacing: 1px
+    cursor pointer
+    transition opacity .3s
+    will-change: opacity
+    &:hover
+      opacity .8
