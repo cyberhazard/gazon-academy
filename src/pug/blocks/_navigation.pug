@@ -1,0 +1,31 @@
+.Navigation
+  .g-wrapper
+    .Navigation__wrapper
+      a(href="/").Navigation__logo
+        include ../../images/logo.svg
+      .Navigation__content
+        .Navigation__top
+          .Navigation__information
+            .Navigation__left
+              .Navigation__item
+                include ../../images/clock.svg
+                .Navigation__text ПН - ВС - 09:00 - 21:00
+              .Navigation__item
+                include ../../images/pin.svg
+                .Navigation__text г. санкт-петербург, Лифляндская улица, дом 6
+            .Navigation__right
+              .Navigation__item
+                include ../../images/phone.svg
+                a(href="tel:+7(495)782-09-87").Navigation__text +7 (495) 782-09-87
+              .Navigation__item
+                include ../../images/envelope.svg
+                a(href="mailto:mail@mail.ru").Navigation__text mail@mail.ru
+        .Navigation__bottom
+          .Navigation__title Лучшие рулонные газоны только у нас!
+          .Navigation__links
+            a(href="/").Navigation__link.Navigation__link_active ГЛАВНАЯ
+            a(href="/rullons.html").Navigation__link РУЛОННЫЙ ГАЗОН
+            a(href="/costs.html").Navigation__link ЦЕНЫ
+            a(href="/contacts.html").Navigation__link КОНТАКТЫ
+          .Navigation__button ОСТАВИТЬ ЗАЯВКУ
+

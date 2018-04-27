@@ -1,0 +1,54 @@
+.Table
+  padding 8rem 0 0
+  &__table
+    width 100%
+    border-collapse collapse
+    margin-bottom 6.4rem
+    border 0.1rem solid #06B0DC
+  &__table_half
+    & td:first-child
+      width 70%
+  &__caption
+    font-size 3.8rem
+    font-weight 700
+    text-align center
+    color black
+    padding 2.4rem 0 4rem
+    text-transform uppercase
+    border-top-left-radius 0.8rem
+    border-top-right-radius 0.8rem
+  &__th
+    font-size 2.1rem
+    padding 2.6rem 3rem
+    text-align left
+    text-transform uppercase
+  &__tr
+    transition 0.3s
+    cursor pointer
+    &:nth-child(1)
+      &:hover
+        background none
+    &:nth-child(2n)
+      background rgba(6,176,220,0.24)
+    &:hover
+      background rgba(6,176,220,1)
+      font-weight 500
+  &__td
+    font-size 1.6rem
+    line-height 2.6rem
+    padding 1rem 3rem
+    transition 0.3s
+  &__first
+    width 34%
+
+@media (max-width: 667px)
+  .Table
+    &__caption
+      font-size 1.5rem
+      padding 1.2rem 0
+    &__th
+      font-size 1rem
+      padding 0.4rem 0
+    &__td
+      font-size 1.2rem
+      padding 0.4rem 0.4rem
