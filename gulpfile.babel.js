@@ -12,6 +12,7 @@ import notify from 'gulp-notify';
 import debug from 'gulp-debug';
 import bs from 'browser-sync';
 import zip from 'gulp-zip';
+import core from './core';
 const browserSync = bs.create()
 
 gulp.task('browser-sync', function() {
