@@ -32,3 +32,15 @@ const findLink = function(){
   });
 }
 findLink();
+
+
+const mobileMenu = () => {
+  const hamburger = document.querySelector('.Mobile__hamburger');
+  const close = document.querySelector('.Mob-menu__close');
+  const menu = document.querySelector('.Mob-menu');
+  const items = [...document.querySelectorAll('.Mob-menu__item')];
+  items.forEach( el => el.onclick = () => menu.style.transform = '');
+  hamburger.onclick = () => (menu.style.transform = 'translateX(-100%)', document.body.style.overflow='hidden')
+  close.onclick = () => (menu.style.transform = '', document.body.style.overflow='')
+}
+mobileMenu()
