@@ -1,0 +1,68 @@
+.Main-contacts
+  padding 8rem 0 20rem
+  background url('../../images/grass-footer.png') bottom center/contain repeat-x
+  &__subtitle
+    text-align center
+    font-size 1.6rem
+    font-style italic
+    font-weight 400
+  &__title
+    text-align center
+    font-size 3.8rem
+    font-weight 700
+    margin-bottom 4rem
+  &__items
+    display flex
+    justify-content space-between
+    align-items stretch
+    margin-bottom 2rem
+  &__item
+    padding 3rem 0
+    text-align center
+    width 33%
+    &:nth-child(2)
+      border-left 0.1rem solid rgba(0,0,0,0.1)
+      border-right 0.1rem solid rgba(0,0,0,0.1)
+  &__icon
+    display inline-block
+    width 4rem
+    height 4rem
+    position relative
+    margin-bottom 2.6rem
+    &:after
+      content ''
+      width 100%
+      height 100%
+      left 0
+      top 0
+      position absolute
+      font-family FontAwesome
+      font-size 4rem
+      color #06B0DC
+    &_adr
+      &:after
+        content '\f041'
+    &_tel
+      &:after
+        content '\f095'
+    &_mail
+      &:after
+        content '\f003'
+  &__what
+    font-size 2.1rem
+    line-height 3.2rem
+    margin-bottom 1rem
+  &__text
+    font-size 1.6rem
+    line-height 2.6rem
+    margin-bottom 0.8rem
+    display block
+    color black
+  &__form
+    width 100%
+    &_side
+      width 30%
+      &:nth-child(2)
+        width 66%
+    &_footer
+      justify-content center
