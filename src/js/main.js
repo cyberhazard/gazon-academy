@@ -44,3 +44,69 @@ const mobileMenu = () => {
   close.onclick = () => (menu.style.transform = '', document.body.style.overflow='')
 }
 mobileMenu()
+
+const callbackPopup = () => {
+  const popup = document.querySelector('.CallbackPopup');
+  const triggerButton = document.querySelector('.Navigation__button');
+  const closeButton = document.querySelector('.CallbackPopup__close');
+  const form = document.querySelector('.CallbackPopup__form');
+  const checkbox = document.querySelector('.CallbackPopup__checkbox');
+
+
+  const removeScroll = () => {
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = (innerWidth - document.body.clientWidth) + 'px';
+  }
+
+  const addScroll = () => {
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+  }
+
+  const prevent = e => {
+    e.preventDefault();
+    if(!checkbox.checked){
+      alert('Согласитесь с обработкой персональных данных')
+    } else {
+      fetch('/mail.php', {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(function() {
+        closePopup(), alertify.success('Ваша заявка отправленна'), form.reset();
+      })
+      .catch(function (error) {
+        alertify.error("Ошибка. Повторите отправку позже");
+      });
+    }
+  }
+  const openPopup = e => {
+    popup.style.display = 'flex';
+    removeScroll();
+    window.addEventListener('keydown', listenKeys);
+    setTimeout(() => popup.style.opacity = 1, 0)
+  }
+
+  const listenKeys = e => {
+    if (e.keyCode === 27) {
+      closePopup();
+    }
+  }
+
+  const closePopup = e => {
+    popup.style.opacity = '';
+    popup.addEventListener('transitionend', function end() {
+      form.reset();
+      popup.style.display = '';
+      popup.removeEventListener('transitionend', end)
+      addScroll();
+      window.removeEventListener('keydown', listenKeys);
+    })
+  }
+
+  triggerButton.addEventListener('click', openPopup);
+  closeButton.addEventListener('click', closePopup);
+  form.addEventListener('submit', prevent);
+
+}
+callbackPopup();

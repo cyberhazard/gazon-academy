@@ -1,0 +1,113 @@
+.CallbackPopup
+  position fixed
+  top 0
+  left 0
+  right 0
+  bottom 0
+  background-color rgba(0,0,0,.4)
+  z-index 10
+  display none
+  justify-content center
+  align-items center
+  opacity 0
+  transition: opacity .5s
+  will-change: opacity
+  &__container
+    position relative
+    background-color #fff
+    padding 4rem
+    border-radius: 6px
+  &__close
+    position absolute
+    top 0
+    right 0
+    display flex
+    justify-content center
+    align-items center
+    transform translate(50%, -50%)
+    width 4rem
+    height 4rem
+    background-color #fff
+    border 1px solid #EEEEEE
+    border-radius: 50%
+    box-shadow: 0 2px 4px rgba(#CECECE, .5)
+    cursor pointer
+    &::after
+      content '\f00d'
+      font-family: 'FontAwesome'
+      font-size: 1.8rem
+  &__heading
+    font-size: 3.8rem
+    font-weight: 800
+    color black
+    text-align center
+    margin-bottom 4rem
+  &__text
+    font-size: 2.1rem
+    font-weight: 400
+    color black
+    margin-bottom 0.5rem
+  &__title
+    font-size: 1.9rem
+    font-weight: 300
+    margin-bottom 1.8rem
+  &__form
+    width 68rem
+  &__input
+    display block
+    width 100%
+    font-size: 1.4rem
+    font-weight: 500
+    color black
+    padding 1.7rem 4rem
+    border 1px solid #CACACA
+    border-radius: 4px
+    margin-bottom 1rem
+    &::placeholder
+      color #999999
+  &__button
+    width 100%
+    border none
+    border-radius: 4px
+    padding 1.7rem 0
+    background-color #35CC62
+    font-size: 1.4rem
+    font-weight: 400
+    text-transform: uppercase
+    letter-spacing: 1px
+    color white
+    cursor pointer
+  &__agreement
+    display flex
+    justify-content center
+    align-items center
+    margin 2rem 0
+  &__checkbox
+    display none
+    &:checked + label::before
+      background-color #35CC62
+  &__label
+    position relative
+    font-size: 1.4rem
+    font-weight: 500
+    color #999999
+    user-select: none
+    cursor pointer
+    &::before
+      content ''
+      position absolute
+      top 50%
+      right calc(100% + 7px)
+      width 1.5rem
+      height 1.5rem
+      border 1px solid #CACACA
+      border-radius: 4px
+      transform translateY(-50%)
+      background-clip: content-box
+      padding 2px
+      box-sizing: border-box
+  &__link
+    font-size: 1.4rem
+    font-weight: 500
+    color #35CC62
+    text-decoration: underline
