@@ -1,3 +1,13 @@
+var sendMail = function sendMail(selector) {
+  return fetch('/mail.php', {
+    method: 'POST',
+    body: new FormData(selector)
+  }).catch(function (error) {
+    alertify.error("Ошибка. Повторите отправку позже");
+  });
+};
+
+
 const PriceSlide = function(){
   if(!document.querySelector('.Price__item')) return null
   const wrapper = document.querySelectorAll('.Price__item');
@@ -14,6 +24,21 @@ const PriceSlide = function(){
 }
 PriceSlide();
 
+const mails = function(){
+  const allForms = [document.querySelector('.Contacts-form__right'),document.querySelector('.Main-contacts__form'),document.querySelector('.Callback__form'),document.querySelector('.Price__callback') ]
+  const sendForm = (forms) => {
+    forms.forEach(el=>{
+      console.log(el)
+      if(!el) return null
+      el.onsubmit = e => {
+        e.preventDefault()
+        sendMail(el).then(alertify.success('Ваша заявка отправленна'), el.reset())
+      }
+    })
+  }
+  sendForm(allForms);
+}
+mails();
 
 const findLink = function(){
   function _toConsumableArray(arr) {

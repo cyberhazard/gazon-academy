@@ -20,12 +20,12 @@ section.Main-contacts
     form.Contacts-form__right.Main-contacts__form
       .Contacts-form__block
         .Contacts-form__side.Main-contacts__form_side
-          input(type="text" name="name" placeholder="Ваше имя").Contacts-form__input.Main-contacts__form_input
-          input(type="tel" name="tel" placeholder="Телефон").Contacts-form__input.Main-contacts__form_input
+          input(type="text" name="name" placeholder="Ваше имя" required).Contacts-form__input.Main-contacts__form_input
+          input(type="tel" name="tel" placeholder="Телефон" required).Contacts-form__input.Main-contacts__form_input
           input(type="email" name="email" placeholder="Email").Contacts-form__input.Main-contacts__form_input
         .Contacts-form__side.Main-contacts__form_side
           textarea(type="text" name="text" placeholder="Сообщение").Contacts-form__textarea.Main-contacts__form_textarea
       .Contacts-form__footer.Main-contacts__form_footer
-        submit.Contacts-form__button Отправить
+        button(type="submit").Contacts-form__button Отправить
 
 
