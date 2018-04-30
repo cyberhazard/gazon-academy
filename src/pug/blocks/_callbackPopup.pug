@@ -1,0 +1,15 @@
+.CallbackPopup
+  .CallbackPopup__container
+    .CallbackPopup__close
+    h2.CallbackPopup__heading Заказать звонок
+    p.CallbackPopup__text Оставьте свои данные и мы вам перезвоним!
+    .CallbackPopup__title Просто заполните форму
+    form.CallbackPopup__form
+      input.CallbackPopup__input(type="text" name="name" placeholder="Имя" required)
+      input.CallbackPopup__input(type="tel" name="phone" placeholder="Телефон" required)
+      input.CallbackPopup__input(type="text" name="size" placeholder="Размер участка" required)
+      .CallbackPopup__agreement
+        input.CallbackPopup__checkbox#callback_chk(type="checkbox")
+        label.CallbackPopup__label(for="callback_chk") Согласен на обработку&nbsp;&nbsp;
+        a.CallbackPopup__link(href="/") персональных данных
+      button.CallbackPopup__button Заказать звонок

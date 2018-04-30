@@ -27,10 +27,10 @@ section.Contacts-form
       form.Contacts-form__right
         .Contacts-form__block
           .Contacts-form__side
-            input(type="text" name="name" placeholder="Ваше имя").Contacts-form__input
-            input(type="tel" name="tel" placeholder="Телефон").Contacts-form__input
+            input(type="text" name="name" placeholder="Ваше имя" required).Contacts-form__input
+            input(type="tel" name="tel" placeholder="Телефон" required).Contacts-form__input
             input(type="email" name="email" placeholder="Email").Contacts-form__input
           .Contacts-form__side
             textarea(type="text" name="text" placeholder="Сообщение").Contacts-form__textarea
         .Contacts-form__footer
-          submit.Contacts-form__button Отправить
+          button(type="submit").Contacts-form__button Отправить

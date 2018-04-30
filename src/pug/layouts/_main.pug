@@ -6,10 +6,15 @@ html(lang="ru")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     title= title
+    link(rel="stylesheet", href="/vendor/alertify.core.css")
+    link(rel="stylesheet", href="/vendor/alertify.default.css")
     link(rel="stylesheet", href="/css/style.css")
     script(src="https://cdn.polyfill.io/v2/polyfill.js?features=default,fetch")
   body.Page
     .Wrapper
+      include ../blocks/_mobile-menu.pug
       include ../blocks/_navigation.pug
       block content
+      include ../blocks/_callbackPopup.pug
+    script(src="/vendor/alertify.min.js")
     script(src="/js/main.js")
