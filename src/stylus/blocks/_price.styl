@@ -1,0 +1,154 @@
+.Price
+  padding 8rem 0 6rem
+  &__subtitle
+    text-align center
+    font-size 1.6rem
+    font-style italic
+    font-weight 400
+  &__title
+    text-align center
+    font-size 3.8rem
+    font-weight 700
+    margin-bottom 4rem
+  &__content
+    display flex
+    justify-content space-between
+    align-items flex-start
+  &__left
+    width 66%
+    border 0.1rem solid #E2E2E2
+    border-radius 0.8rem
+  &__right
+    width 30%
+  &__heading
+    display flex
+    justify-content flex-start
+    align-items stretch
+    border-bottom 0.1rem solid #E2E2E2
+    cursor pointer
+  &__checked
+    position relative
+    width 8rem
+    height 8rem
+    display flex
+    justify-content center
+    align-items center
+    color #68AF08
+    // border-top-left-radius 0.8rem
+    transition 0.3s
+    &:after
+      content "\f067"
+      font-family FontAwesome
+      font-size 2rem
+  &__variable
+    width 100%
+    font-weight 700
+    font-size 2.2rem
+    padding 2.6rem 2rem
+  &__pricing
+    display flex
+    justify-content space-between
+    align-items stretch
+    margin-bottom 3rem
+  &__item
+    overflow hidden
+    transition 0.5s
+    border-bottom 0.1rem solid #E2E2E2
+    &:last-child
+      border-bottom none
+  &__inner
+    padding 0 3rem
+    position relative
+    height 0
+    &:before
+      content ''
+      display block
+      padding-top 2rem
+    &:after
+      content ''
+      display block
+      padding-bottom 2rem
+  &__cost
+    width 30%
+    text-align center
+    padding 2rem 1rem
+    box-shadow 0 0.2rem 0.6rem rgba(0,0,0,0.22)
+    flex-wrap wrap
+  &__size
+    font-weight 500
+    font-size 1.4rem
+    margin-bottom 1rem
+  &__val
+    font-size 1.8rem
+    font-family Montserrat
+    font-weight 700
+  &__description
+    margin-bottom 2rem
+  &__text
+    font-weight 300
+    font-size 1.6rem
+    line-height 1.9rem
+    &_bold
+      text-transform uppercase
+      font-family Roboto
+      font-size 1.4rem
+      font-weight 700
+      margin-bottom 1rem
+  &__wrap
+    width 100%
+    position relative
+    margin-bottom 2rem
+    &:after
+      content ''
+      position absolute
+      width 96%
+      height 96%
+      left 50%
+      top 50%
+      transform translate(-50%,-50%)
+      border 0.1rem dashed white
+  &__img
+    width 100%
+    object-fit cover
+    max-height 53rem
+  &__callback
+    width 100%
+    background #06B0DC
+    padding 2.6rem 1.6rem
+    border-radius 0.3rem
+    &_title
+      text-align center
+      font-size 2.2rem
+      font-weight 700
+      margin-bottom 1.4rem
+    &_button
+      width 100%
+      font-weight 500
+      font-size 1.4rem
+      padding 2.2rem 1rem
+      color black
+      background white
+      text-align center
+      cursor pointer
+  &__input
+    width 100%
+    padding 1.6rem 1.6rem
+    background rgba(255,255,255,0.2)
+    border-radius 0.3rem
+    font-style italic
+    font-size 1.4rem
+    border 0.1rem solid white
+    margin-bottom 2rem
+    &::placeholder
+      color black
+      font-style italic
+      font-size 1.4rem
+
+.Price__item_active .Price__inner
+  height 100%
+.Price__item_active .Price__checked
+  background #68AF08
+  color white
+  &:after
+    content '\f068'
+
