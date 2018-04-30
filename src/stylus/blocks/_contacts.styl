@@ -1,0 +1,114 @@
+.Contacts-form
+  padding 8rem 0
+  &__subtitle
+    text-align center
+    font-size 1.6rem
+    font-style italic
+    font-weight 400
+  &__title
+    text-align center
+    font-size 3.8rem
+    font-weight 700
+    margin-bottom 4rem
+  &__content
+    display flex
+    justify-content space-between
+  &__left
+    width 24%
+  &__right
+    width 66%
+    border 0.2rem solid #06B0DC
+    border-radius 0.3rem
+    padding 3rem
+
+  &__item
+    position relative
+    margin-bottom 3rem
+    &:before
+      content ''
+      left 0
+      top 0
+      width 1.6rem
+      font-family FontAwesome
+      font-size 1.6rem
+      position absolute
+    &_mail
+      &:before
+        content '\f003'
+    &_phone
+      &:before
+        content '\f095'
+    &_fax
+      &:before
+        content '\f02f'
+    &_adr
+      &:before
+        content '\f278'
+    &_clock
+      &:before
+        content '\f017'
+  &__link
+    font-weight 400
+    font-size 1.4rem
+    color black
+    padding-left 2.6rem
+  &__socials
+    display flex
+    justify-content space-between
+    align-items center
+  &__block
+    display flex
+    justify-content space-between
+    align-items stretch
+    margin-bottom 3rem
+  &__side
+    width 48%
+  &__input
+    display block
+    font-size 1.4rem
+    font-style italic
+    width 100%
+    border 0.1rem solid rgba(6,176,220,0.45)
+    border-radius 0.3rem
+    margin-bottom 2rem
+    padding 1.6rem
+    &:last-child
+      margin-bottom 0
+    &::placeholder
+      font-size 1.4rem
+      font-style italic
+      color black
+  &__textarea
+    display block
+    width 100%
+    height 100%
+    font-size 1.4rem
+    font-style italic
+    border 0.1rem solid rgba(6,176,220,0.45)
+    border-radius 0.3rem
+    padding 1.6rem
+    resize none
+    &::placeholder
+      font-size 1.4rem
+      font-style italic
+      color black
+  &__footer
+    display flex
+    justify-content flex-end
+  &__button
+    background-color #06B0DC
+    border none;
+    border-radius: 4px
+    padding 2.2rem 13rem
+    font-size: 1.4rem
+    color white
+    font-weight: 500
+    text-transform: uppercase
+    letter-spacing: 1px
+    cursor pointer
+    transition opacity .3s
+    will-change: opacity
+    &:hover
+      opacity .8
+
+
