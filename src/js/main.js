@@ -28,7 +28,6 @@ const mails = function(){
   const allForms = [document.querySelector('.Contacts-form__right'),document.querySelector('.Main-contacts__form'),document.querySelector('.Callback__form'),document.querySelector('.Price__callback') ]
   const sendForm = (forms) => {
     forms.forEach(el=>{
-      console.log(el)
       if(!el) return null
       el.onsubmit = e => {
         e.preventDefault()
@@ -73,6 +72,7 @@ mobileMenu()
 const callbackPopup = () => {
   const popup = document.querySelector('.CallbackPopup');
   const triggerButton = document.querySelector('.Navigation__button');
+  const callbackButtons = document.querySelectorAll('.About-rullon__button');
   const closeButton = document.querySelector('.CallbackPopup__close');
   const form = document.querySelector('.CallbackPopup__form');
   const checkbox = document.querySelector('.CallbackPopup__checkbox');
@@ -130,6 +130,9 @@ const callbackPopup = () => {
   }
 
   triggerButton.addEventListener('click', openPopup);
+  callbackButtons.forEach(el=>{
+    el.addEventListener('click', openPopup);
+  })
   closeButton.addEventListener('click', closePopup);
   form.addEventListener('submit', prevent);
 
