@@ -1,0 +1,62 @@
+.Scheme
+  padding 8rem 0
+  background url('/images/scheme-bg.jpg') center center/cover no-repeat
+  &__heading
+    position relative
+    font-family: 'Roboto'
+    font-weight: 600
+    font-size: 3.8rem
+    color #fff
+    text-align center
+    margin-bottom 4rem
+    &::after
+      content attr(data-text)
+      position absolute
+      bottom calc(100% + 1rem)
+      left 0
+      width 100%
+      text-align center
+      font-size: 1.6rem
+      font-weight: 400
+      font-style: italic
+  &__scheme
+    display flex
+    align-items flex-start
+    justify-content space-between
+    padding 0 12rem
+    background url('/images/paperplane.svg') left 30%/contain no-repeat
+  &__block
+    width 23rem
+    flex 0 0 auto
+    text-align center
+  &__image
+    padding 0 5rem
+    & svg
+      width 100%
+  &__description
+    padding-top 2rem
+    font-weight: 500
+    font-size: 1.6rem
+    color #fff
+    &_last
+      font-weight: 900
+      font-size: 2.2rem
+      text-transform: uppercase
+
+@media (max-width: 1024px)
+  .Scheme
+    &__scheme
+      background none
+      flex-wrap wrap
+      justify-content space-between
+      align-content center
+    &__block
+      margin-bottom 4rem
+
+@media (max-width: 767px)
+  .Scheme
+    &__scheme
+      padding 0
+      display block
+    &__block
+      margin 0 auto 4rem
