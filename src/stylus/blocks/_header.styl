@@ -1,3 +1,99 @@
 .Header
-  padding-top 20rem
-  background red
+  background url('/images/header-bg.jpg') center top/cover no-repeat
+  &__container
+    height 100vh
+    padding-top 20rem
+    display flex
+    flex-direction: column
+    justify-content center
+    align-items center
+  &__text
+    position relative
+    font-family: 'Montserrat'
+    font-weight: 900
+    font-size: 4rem
+    text-align center
+    color #fff
+    width 83rem
+    margin 0 auto
+    padding-bottom 3rem
+    margin-bottom 15rem
+    &::after
+      content: ''
+      position absolute
+      top 100%
+      left 20%
+      right 20%
+      height 0.2rem
+      background-color #fff
+
+.Countdown
+  display flex
+  align-items center
+  background-color rgba(#06B0DC,.7)
+  padding 3rem
+  border-radius 8px
+  color #fff
+  &__text
+    font-family: 'Montserrat'
+    font-weight: 800
+    font-size: 3rem
+    width 48rem
+    flex 0 0 auto
+    margin-right 6rem
+  &__timer
+    display flex
+    align-items center
+  &__number
+    font-family: 'Roboto'
+    font-weight: 500
+    margin-right 2rem
+    text-align center
+    & span
+      font-size: 4.8rem
+  &__label
+    font-size: 1.4rem
+    text-transform: uppercase
+
+.Presents
+  display flex
+  align-items center
+  background-color rgba(#06B0DC,.7)
+  border-bottom-left-radius 8px
+  border-bottom-right-radius 8px
+  margin 0 auto
+  padding 1rem 1rem 1rem 3rem
+  &__text
+    font-family: 'Montserrat'
+    font-weight: 500
+    font-size: 1.6rem
+    color #fff
+    margin-right 3rem
+  &__image
+    & svg
+      width 4.5rem
+      height 4rem
+
+@media (max-width: 1024px)
+  .Header
+    &__text
+      width 100%
+      margin-bottom 3rem
+    &__container
+      padding-top 25rem
+      height auto
+  .Countdown
+    display block
+    &__text
+      width 100%
+      text-align center
+      margin-bottom 1rem
+    &__timer
+      justify-content center
+  .Presents
+    margin-bottom 3rem
+
+@media (max-width: 767px)
+  .Header
+    &__container
+      padding-top 10rem

@@ -138,3 +138,43 @@ const callbackPopup = () => {
 
 }
 callbackPopup();
+
+/*** Countdown *****/
+const countdown = (function(){
+  const clock = {
+    root: document.querySelector('.Countdown'),
+    units: {
+      days: document.querySelector('.Countdown__number.days span'),
+      hours: document.querySelector('.Countdown__number.hours span'),
+      minutes: document.querySelector('.Countdown__number.minutes span'),
+      seconds: document.querySelector('.Countdown__number.seconds span')
+    },
+  };
+
+  const lZ = num => num.toString().length > 1 ? num : '0' + num
+
+
+  return (date, cb) => {
+    if (!clock.root) return null;
+    const countDownDate = new Date(date).getTime();
+    const x = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      cb && cb({days, hours, minutes, seconds}) === false && clearInterval(x);
+      clock.units.days.textContent = lZ(days) + '.'
+      clock.units.hours.textContent = lZ(hours) + '.'
+      clock.units.minutes.textContent = lZ(minutes) + '.'
+      clock.units.seconds.textContent = lZ(seconds) + '.'
+      if (distance < 0) {
+        clearInterval(x);
+      }
+    }, 1000);
+  }
+})()
+
+countdown('May 10, 2018 00:00:00')
