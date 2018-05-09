@@ -13,6 +13,7 @@ const PriceSlide = function(){
   const wrapper = document.querySelectorAll('.Price__item');
   const header = document.querySelector('.Price__item .Price__heading');
   const height = header.clientHeight;
+
   wrapper.forEach(e => {
     e.style.height = height + 'px';
     e.onclick = () => {
@@ -21,6 +22,7 @@ const PriceSlide = function(){
       e.classList.toggle('Price__item_active');
     }
   })
+  wrapper[0].style.height = wrapper[0].scrollHeight + 'px';
 }
 PriceSlide();
 
