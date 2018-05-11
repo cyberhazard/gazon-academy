@@ -1,0 +1,77 @@
+.i-Projects
+  padding-top 9rem
+  padding-bottom 8rem
+  &__subheading
+    font-family: 'Roboto'
+    font-style: italic
+    font-size: 1.6rem
+    color #9F8447
+    text-align center
+    margin-bottom 0.2rem
+  &__heading
+    font-family: 'Roboto'
+    font-weight: bold
+    font-size: 3.8rem
+    color #585858
+    text-align center
+    margin-bottom 4rem
+  &__tabs
+    display flex
+    justify-content center
+    align-items center
+    margin-bottom 4rem
+  &__tab
+    padding 1.4rem 1.6rem
+    background-color transparent
+    font-family: 'Roboto'
+    font-weight: 400
+    font-size: 1.8rem
+    color #585858
+    border-radius 8px
+    margin-right 0.6rem
+    cursor pointer
+    &:last-child
+      margin-right 0
+    &_active
+      color #fff
+      background-color #68AF08
+  &__projects
+    display: -ms-grid
+    display: grid
+    -ms-grid-columns 1fr 1fr 1fr 1fr 1fr
+    grid-template-columns 1fr 1fr 1fr 1fr 1fr
+    -ms-grid-rows 1fr 1fr
+    grid-template-rows 1fr 1fr
+  &__project
+    height 22.8rem
+    width 100%
+    border 1px solid RGB(85, 89, 90)
+    background-size: cover
+    position relative
+    cursor pointer
+    &:first-child
+      -ms-grid-column 1
+      grid-column-start 1
+      grid-column-end 3
+      -ms-grid-row 1
+      grid-row-start 1
+      grid-row-end 3
+      height 100%
+    &:hover ^[0]__hover
+      opacity 1
+  &__hover
+    display flex
+    justify-content center
+    align-items center
+    position absolute
+    top 1rem
+    bottom 1rem
+    left 1rem
+    right 1rem
+    background-color rgba(#06B0DC,.6)
+    opacity 0
+    transition opacity .3s
+    will-change: opacity
+    & svg
+      width 15%
+
