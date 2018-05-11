@@ -179,4 +179,33 @@ const countdown = (function(){
   }
 })()
 
+void function() {
+  const data = document.querySelector('.i-Projects__projects')
+  const tabs = [...document.querySelectorAll('.i-Projects__tab')];
+  const projects = [...document.querySelectorAll('.i-Projects__project')];
+  if (!data) return null
+  tabs.forEach(tab => tab.onclick = () => {
+    tabs.forEach(t => t === tab? t.classList.add('i-Projects__tab_active'): t.classList.remove('i-Projects__tab_active'));
+    projects.forEach(p => data.appendChild(p))
+    if (tab.dataset.cat === 'all') return null
+    projects.forEach(p => p.dataset.cat !== tab.dataset.cat && p.remove())
+  });
+  projects.forEach(project => project.onclick = () => {
+    const popup = document.createElement('div');
+    document.body.style.overflow = 'hidden';
+    document.body.style.paddingRight = window.innerWidth - document.body.clientWidth + 'px';
+    popup.onclick = () => {
+      popup.remove();
+      document.body.style.overflow = document.body.style.paddingRight = '';
+    }
+    popup.style.cssText = "background-color: rgba(0,0,0,.8); position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: flex; z-index: 100; justify-content: center; align-items: center;"
+    const img = new Image();
+    const link = project.style.backgroundImage.split('url("')[1].split('"')[0];
+    img.src = link;
+    img.style.cssText = 'max-width: 80%; max-height: 80%;'
+    popup.appendChild(img);
+    document.body.appendChild(popup)
+  })
+}()
+
 countdown('May 10, 2018 00:00:00')
