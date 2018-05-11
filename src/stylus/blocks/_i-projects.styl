@@ -75,3 +75,23 @@
     & svg
       width 15%
 
+@media (max-width: 1000px)
+  .i-Projects
+    &__projects
+      grid-template-columns 1fr 1fr 1fr
+    &__project
+      height 32rem
+
+@media (max-width: 667px)
+  .i-Projects
+    &__projects
+      grid-template-columns 1fr 1fr
+    &__project
+      height 20rem
+      &:first-child
+        -ms-grid-column 1
+        grid-column-start 1
+        grid-column-end 2
+        -ms-grid-row 1
+        grid-row-start 1
+        grid-row-end 2
