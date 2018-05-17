@@ -208,4 +208,4 @@ void function() {
   })
 }()
 
-countdown('May 10, 2018 00:00:00')
+countdown('May 30, 2018 00:00:00')
