@@ -66,8 +66,19 @@ gulp.task('images', () => {
     .pipe(debug({title: 'images:'}))
     .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(imagemin({
-      optimizationLevel: 5,
+      optimizationLevel: 2,
+      progressive: true,
+      interlaced: true,
+      verbose: true,
     }))
+    .pipe(gulp.dest('./build/images'))
+    .pipe(browserSync.stream());
+})
+
+gulp.task('images:copy', () => {
+  gulp.src('./src/images/**/*.*')
+    .pipe(debug({title: 'images:'}))
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(gulp.dest('./build/images'))
     .pipe(browserSync.stream());
 })
@@ -84,5 +95,5 @@ gulp.task('watch', () => {
 gulp.task('fonts', () => gulp.src('./src/fonts/**/*.*').pipe(gulp.dest('./build/fonts')))
 gulp.task('vendor', () => gulp.src('./src/vendor/**/*.*').pipe(gulp.dest('./build/vendor')))
 
-gulp.task('default', ['js', 'css', 'html', 'fonts', 'vendor', 'images', 'browser-sync', 'watch'])
+gulp.task('default', ['js', 'css', 'html', 'fonts', 'vendor', 'images:copy', 'browser-sync', 'watch'])
 gulp.task('build', ['js', 'css', 'html', 'fonts', 'vendor', 'images'])
